@@ -1,0 +1,39 @@
+{
+  "name": "library-button-test",
+  "version": "1.0.4",
+  "description": "",
+  "typings": "index.d.ts",
+  "type": "module",
+  "exports": {
+    "./react": "./react/design-react.js",
+    "./vue": "./vue/design-vue.js",
+    "./types": "./types/index.d.ts",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "react": [
+        "react/design-react.d.ts"
+      ],
+      "vue": [
+        "vue/design-vue.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+  },
+  "keywords": [
+    "vue",
+    "react"
+  ],
+  "engines": {
+    "node": ">= 4.7.0"
+  },
+  "dependencies": {
+    "dom7": "^4.0.4",
+    "ssr-window": "^4.0.2",
+    "vue-styled-components": "^1.6.0",
+    "styled-components": "^5.3.5"
+  }
+}
