@@ -10,7 +10,7 @@
     "vue": "npm run build:vue && concurrently --kill-others \"vite ./playground/vue\"",
     "storybook": "node scripts/build && start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "publish:patch": "npm run build && npm version patch && cd dist && npm publish",
+    "publish:patch": "cd ./src/copy/ && npm version patch && cd ../.. && npm run build && cd ./dist && npm publish",
     "publish:minor": "npm run build && npm version minor && cd dist && npm publish",
     "publish:major": "npm run build && npm version major && cd dist && npm publish"
   },
