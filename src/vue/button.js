@@ -1,5 +1,5 @@
 import { HoverContainer, StyledButton } from './styled';
-
+import {PropType} from 'vue'
 
 const buttonType = {
   solid: {

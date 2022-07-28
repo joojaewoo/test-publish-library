@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { SsmButton } from 'design/vue/design-vue';
+import { SsmButton } from '../../dist/vue/design-vue';
 import styled from 'vue-styled-components';
 
 const ButtonContainer = styled('div')`
@@ -23,6 +23,7 @@ const ButtonContainer = styled('div')`
 `
 
 export default {
+  name: 'test',
   components: {
     SsmButton,
     ButtonContainer
