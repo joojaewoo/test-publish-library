@@ -18,11 +18,11 @@ const App = () => {
   }
   return (
     <Container>
-      <SsmButton label="스몰사이즈" size="sm" onClick={() => onClick('sm')}/>
-      <SsmButton label="중간사이즈" size="md" onClick={() => onClick('md')}/>
-      <SsmButton label="라지사이즈" size="lg" onClick={() => onClick('lg')}/>
-      <SsmButton label="더큰사이즈" size="xlg" onClick={() => onClick('xlg')}/>
-      <SsmButton label="꽉찬사이즈" size="full" onClick={() => onClick('full')}/>
+      <SsmButton size="sm" onClick={() => onClick('sm')}>스몰사이즈</SsmButton>
+      <SsmButton size="md" onClick={() => onClick('md')}>중간사이즈</SsmButton>
+      <SsmButton size="lg" onClick={() => onClick('lg')}>라지사이즈</SsmButton>
+      <SsmButton size="xlg" onClick={() => onClick('xlg')}>더큰사이즈</SsmButton>
+      <SsmButton size="full" onClick={() => onClick('full')}>꽉찬사이즈</SsmButton>
     </Container>
   );
 };

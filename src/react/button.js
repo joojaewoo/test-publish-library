@@ -55,18 +55,18 @@ const sizeType = {
 }
 
 
-const SsmButton = ({label, onClick, type = 'solid', size = 'small', isDisabled = false}) => {
+const SsmButton = React.forwardRef(
+  ({ size, type, isDisabled, onClick, children}) => {
   const typeProps = {...(buttonType[type] ? buttonType[type] : buttonType['solid']), ...(sizeType[size]?sizeType[size]: sizeType['md'])};
   return (
     <StyledButton click={onClick} {...typeProps} onClick={onClick} disabled={isDisabled}>
       <HoverContainer padding={typeProps['padding']}>
-        <div>
-          {label}
-        </div>
+          {children}
       </HoverContainer>
     </StyledButton>
   )
-}
+});
+
 SsmButton.displayName = 'SsmButton';
 
 export { SsmButton };

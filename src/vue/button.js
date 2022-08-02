@@ -1,5 +1,4 @@
 import { HoverContainer, StyledButton } from './styled';
-import {PropType} from 'vue'
 
 const buttonType = {
   solid: {
@@ -18,7 +17,6 @@ const buttonType = {
     border: '1px solid #D0D6E1',
   }
 }
-
 
 const sizeType = {
   sm: {
@@ -75,7 +73,7 @@ const SsmButton = {
   },
 
   render() {
-    const {type, size, label} = this.$props;
+    const {type, size} = this.$props;
     const {
       color, border, backgroundColor, hoverBackgroundColor
     } = buttonType[type] ? buttonType[type] : buttonType['solid'];
@@ -91,7 +89,7 @@ const SsmButton = {
       <styled-button width={width} color={color} border={border} backgroundColor={backgroundColor} hoverBackgroundColor={hoverBackgroundColor} height={height} fontSize={fontSize} onClick={onClick}>
         <hover-container padding={padding}>
           <div>
-            {label}
+            <slot />
           </div>
         </hover-container>
       </styled-button>
