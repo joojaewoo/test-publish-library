@@ -15,21 +15,21 @@ const buttonType = {
     color: '#3E4149',
     backgroundColor: '#ffffff',
     border: '1px solid #D0D6E1',
-  }
-}
+  },
+};
 
 const sizeType = {
   sm: {
     height: '32px',
     fontSize: '14px',
     maxWidth: '58px',
-    padding: '0 16px'
+    padding: '0 16px',
   },
   md: {
     height: '40px',
     fontSize: '14px',
     maxWidth: '58px',
-    padding: '0 24px'
+    padding: '0 24px',
   },
   lg: {
     height: '44px',
@@ -47,8 +47,8 @@ const sizeType = {
     width: '100%',
     height: '56px',
     fontSize: '16px',
-  }
-}
+  },
+};
 
 const SsmButton = {
   name: 'SsmButton',
@@ -73,28 +73,33 @@ const SsmButton = {
   },
 
   render() {
-    const {type, size} = this.$props;
-    const {
-      color, border, backgroundColor, hoverBackgroundColor
-    } = buttonType[type] ? buttonType[type] : buttonType['solid'];
-    const {
-      height, fontSize, padding, width
-    } = sizeType[size] ? sizeType[size] : sizeType['md'];
+    const { type, size } = this.$props;
+    const { color, border, backgroundColor, hoverBackgroundColor } = buttonType[type]
+      ? buttonType[type]
+      : buttonType['solid'];
+    const { height, fontSize, padding, width } = sizeType[size] ? sizeType[size] : sizeType['md'];
 
     const onClick = () => {
       this.$emit('click');
-    }
+    };
 
     return (
-      <styled-button width={width} color={color} border={border} backgroundColor={backgroundColor} hoverBackgroundColor={hoverBackgroundColor} height={height} fontSize={fontSize} onClick={onClick}>
+      <styled-button
+        width={width}
+        color={color}
+        border={border}
+        backgroundColor={backgroundColor}
+        hoverBackgroundColor={hoverBackgroundColor}
+        height={height}
+        fontSize={fontSize}
+        onClick={onClick}
+      >
         <hover-container padding={padding}>
-          <div>
-            <slot />
-          </div>
+          <div>{this.$slots.default}</div>
         </hover-container>
       </styled-button>
-    )
-  }
-}
+    );
+  },
+};
 
 export { SsmButton };

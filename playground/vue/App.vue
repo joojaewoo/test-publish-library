@@ -1,10 +1,8 @@
 <template>
   <button-container>
-    <ssm-button label="스몰사이즈" size="sm" @click="() => test('sm')"/>
-    <ssm-button label="중간사이즈" size="md" @click="() => test('md')"/>
-    <ssm-button label="라지사이즈" size="lg" @click="() => test('lg')"/>
-    <ssm-button label="더큰사이즈" size="xlg" @click="() => test('xl')"/>
-    <ssm-button label="꽉찬사이즈" size="full" @click="() => test('full')"/>
+    <ssm-button size="sm" @click="() => test('sm')">
+      스몰사이즈
+    </ssm-button>
   </button-container>
 </template>
 

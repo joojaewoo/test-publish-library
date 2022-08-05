@@ -40,10 +40,6 @@ class Build {
 (async () => {
   elapsed.start('build');
   const build = new Build();
-  await build
-    .add('types', buildTypes)
-    .add('react', buildReact)
-    .add('vue', buildVue)
-    .run();
-  elapsed.end('build','build complete');
+  await build.add('types', buildTypes).add('react', buildReact).add('vue', buildVue).run();
+  elapsed.end('build', 'build complete');
 })();

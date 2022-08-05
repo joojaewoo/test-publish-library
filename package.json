@@ -11,8 +11,8 @@
     "storybook": "node scripts/build && start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "publish:patch": "cd ./src/copy/ && npm version patch && cd ../.. && npm run build && cd ./dist && npm publish",
-    "publish:minor": "npm run build && npm version minor && cd dist && npm publish",
-    "publish:major": "npm run build && npm version major && cd dist && npm publish"
+    "publish:minor": "cd ./src/copy/ && npm version minor && cd ../.. && npm run build && cd ./dist && npm publish",
+    "publish:major": "cd ./src/copy/ && npm version major && cd ../.. && npm run build && cd ./dist && npm publish"
   },
   "author": "",
   "license": "ISC",
@@ -52,6 +52,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.30.1",
     "exec-sh": "^0.4.0",
     "fs-extra": "^10.1.0",
     "globby": "^13.1.2",

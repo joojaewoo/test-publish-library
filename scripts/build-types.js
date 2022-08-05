@@ -7,7 +7,6 @@ const fs = require('fs-extra');
 const { outputDir } = require('./utils/output-dir');
 
 async function buildTypes() {
-
   const { globby } = await import('globby');
   elapsed.start('types');
   let coreEventsReact = '';

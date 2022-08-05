@@ -14,7 +14,6 @@ const rules = {
   'react/no-array-index-key': 'off',
   'react/prop-types': 'off',
   'react/jsx-props-no-spreading': 'off',
-  'import/no-unresolved': [2, { ignore: ['ssr-window', 'dom7', 'swiper'] }],
 };
 module.exports = {
   env: {
@@ -38,7 +37,7 @@ module.exports = {
   overrides: [
     {
       files: ['*.js'],
-      extends: ['plugin:react/recommended', 'airbnb-base', 'plugin:prettier/recommended'],
+      extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
       rules,
     },
     {
