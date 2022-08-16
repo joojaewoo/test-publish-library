@@ -6,7 +6,7 @@
   "type": "module",
   "exports": {
     "./react": "./react/design-react.js",
-    "./vue": "./vue/design-vue.js",
+    "./vue": "./vue/design-vue.esm.js",
     "./types": "./types/index.d.ts",
     "./package.json": "./package.json"
   },
@@ -35,5 +35,11 @@
     "ssr-window": "^4.0.2",
     "vue-styled-components": "^1.6.0",
     "styled-components": "^5.3.5"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "~1.6.0",
+    "axios": "^0.21.1",
+    "vue": "~2.6.14",
+    "vue-cookies": "^1.7.4"
   }
 }

@@ -1,3 +1,16 @@
+<template>
+  <styled-button
+    v-bind="{...sizeType[size], ...buttonType[type]}"
+    @lick="onClick"
+  >
+    <hover-container :padding="sizeType[size].padding">
+      <slot />
+    </hover-container>
+  </styled-button>
+</template>
+
+<script lang='ts'>
+import { defineComponent, PropType } from '@vue/composition-api';
 import { HoverContainer, StyledButton } from './styled';
 
 const buttonType = {
@@ -49,57 +62,43 @@ const sizeType = {
     fontSize: '16px',
   },
 };
-
-const SsmButton = {
+export default defineComponent({
   name: 'SsmButton',
-  emits: ['click'],
   props: {
     label: {
       type: String,
       required: true,
     },
     type: {
-      type: String,
+      type: String as PropType<keyof typeof buttonType>,
       default: 'solid',
+      validate: (value: string) => {
+        if (buttonType[value]) return value;
+        return 'solid'
+      }
     },
     size: {
-      type: String,
+      type: String as PropType<keyof typeof sizeType>,
       default: 'md',
+      validate: (value: string) => {
+        if (sizeType[value]) return value;
+        return 'md'
+      }
     },
   },
   components: {
     StyledButton,
     HoverContainer,
   },
-
-  render() {
-    const { type, size } = this.$props;
-    const { color, border, backgroundColor, hoverBackgroundColor } = buttonType[type]
-      ? buttonType[type]
-      : buttonType['solid'];
-    const { height, fontSize, padding, width } = sizeType[size] ? sizeType[size] : sizeType['md'];
-
+  setup(_, {emit}) {
     const onClick = () => {
-      this.$emit('click');
-    };
-
-    return (
-      <styled-button
-        width={width}
-        color={color}
-        border={border}
-        backgroundColor={backgroundColor}
-        hoverBackgroundColor={hoverBackgroundColor}
-        height={height}
-        fontSize={fontSize}
-        onClick={onClick}
-      >
-        <hover-container padding={padding}>
-          <div>{this.$slots.default}</div>
-        </hover-container>
-      </styled-button>
-    );
-  },
-};
-
-export { SsmButton };
+      emit('click');
+    }
+    return {
+      buttonType,
+      sizeType,
+      onClick
+    }
+  }
+})
+</script>

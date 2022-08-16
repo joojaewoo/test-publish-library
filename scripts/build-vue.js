@@ -5,10 +5,8 @@ const { outputDir } = require('./utils/output-dir');
 const { addBannerToFile } = require('./utils/banner');
 
 async function buildVue() {
-  await exec(
-    `npx babel --config-file ./scripts/babel/babel.config.vue.js src/vue --out-dir ${outputDir}/vue`,
-  );
-  await addBannerToFile(`./${outputDir}/vue/design-vue.js`, 'Vue');
+  await exec(`rollup --config ./scripts/config/rollup.config.vue.js`);
+  await addBannerToFile(`./${outputDir}/vue/design-vue.esm.js`, 'Vue');
 }
 
 module.exports = buildVue;
