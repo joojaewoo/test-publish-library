@@ -1,13 +1,15 @@
 <template>
   <button-container>
-    <ssm-button size="sm" @click="() => test('sm')">
+    <ssm-button size="sm" @click="test('sm')" >
       스몰사이즈
     </ssm-button>
   </button-container>
 </template>
 
 <script>
-// import { SsmButton } from '../../dist/vue/design-vue';
+import {defineComponent} from '@vue/composition-api'
+import { SsmButton } from '../../dist/vue/design-vue.esm.js';
+
 import styled from 'vue-styled-components';
 
 const ButtonContainer = styled('div')`
@@ -20,15 +22,16 @@ const ButtonContainer = styled('div')`
   padding-top: 100px;
 `
 
-export default {
+export default defineComponent({
   name: 'test',
   components: {
-    ButtonContainer
+    ButtonContainer,
+    SsmButton
   },
   setup() {
     return {
       test: (size) => window.alert(`${size}사이즈`),
     }
   }
-};
+});
 </script>

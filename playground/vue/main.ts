@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueCompositionApi from '@vue/composition-api';
-import plugin from '../../dist/vue/design-vue.esm.js';
+import plugin from '../../dist/vue/design-vue';
 
 Vue.use(VueCompositionApi);
 Vue.use(plugin);

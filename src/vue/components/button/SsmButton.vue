@@ -1,7 +1,7 @@
 <template>
   <styled-button
     v-bind="{...sizeType[size], ...buttonType[type]}"
-    @lick="onClick"
+    @click="onClick"
   >
     <hover-container :padding="sizeType[size].padding">
       <slot />
@@ -65,25 +65,13 @@ const sizeType = {
 export default defineComponent({
   name: 'SsmButton',
   props: {
-    label: {
-      type: String,
-      required: true,
-    },
     type: {
       type: String as PropType<keyof typeof buttonType>,
       default: 'solid',
-      validate: (value: string) => {
-        if (buttonType[value]) return value;
-        return 'solid'
-      }
     },
     size: {
       type: String as PropType<keyof typeof sizeType>,
       default: 'md',
-      validate: (value: string) => {
-        if (sizeType[value]) return value;
-        return 'md'
-      }
     },
   },
   components: {

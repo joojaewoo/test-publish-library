@@ -1,5 +1,5 @@
 const fs = require('fs-extra');
-const pkg = require('../../../package.json');
+const pkg = require('../../package.json');
 
 const date = {
   day: new Date().getDate(),
@@ -13,13 +13,11 @@ const date = {
 function banner(name = null) {
   return `${`
 /**
- * Swiper ${name ? `${name} ` : ''}${pkg.version}
+ * Dealicious Design System ${name ? `${name} ` : ''}${pkg.version}
  * ${pkg.description}
  * ${pkg.homepage}
  *
- * Copyright 2014-${date.year} ${pkg.author}
- *
- * Released under the ${pkg.license} License
+ * Copyright 2022-${date.year} ${pkg.author}
  *
  * Released on: ${date.month} ${date.day}, ${date.year}
  */

@@ -39,6 +39,9 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "playground/**/*.vue",
+    "playground/**/*.tsx",
+    "playground/**/*.ts",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
