@@ -1,15 +1,57 @@
 <template>
   <button-container>
-    <ssm-button size="sm" @click="test('sm')" >
+    <ssm-button
+      size="sm"
+      @click="test('sm')">
       스몰사이즈
     </ssm-button>
+    <ssm-button
+      size="md"
+      @click="test('md')">
+      중간사이즈
+    </ssm-button>
+    <ssm-button
+      size="lg"
+      type="outline"
+      @click="test('lg')">
+      라지사이즈
+    </ssm-button>
+    <ssm-button
+      size="xlg"
+      type="lightSolid"
+      @click="test('xlg')">
+      더큰사이즈
+    </ssm-button>
+    <ssm-button
+      size="full"
+      @click="test('full')">
+      꽉찬사이즈
+    </ssm-button>
+    <check-box-button
+      v-model="t"
+      status="di">
+      tttt
+    </check-box-button>
+    <radio-button
+      v-for="item in rA"
+      :key="item"
+      v-model="r"
+      :key-value="item">
+      {{ item }}
+    </radio-button>
+    <radio-button
+      v-model="r"
+      :key-value="'a'"
+      is-disable>
+      aaa
+    </radio-button>
   </button-container>
 </template>
 
-<script>
-import {defineComponent} from '@vue/composition-api'
-import { SsmButton } from '../../dist/vue/design-vue.esm.js';
+<script lang='ts'>
+import { defineComponent, ref } from 'vue';
 
+// @ts-ignore
 import styled from 'vue-styled-components';
 
 const ButtonContainer = styled('div')`
@@ -23,14 +65,18 @@ const ButtonContainer = styled('div')`
 `
 
 export default defineComponent({
-  name: 'test',
+  name: 'TestA',
   components: {
     ButtonContainer,
-    SsmButton
   },
   setup() {
+    const t = ref(false);
+    const r = ref('a');
+    const rA = ['a','b','c']
     return {
-      test: (size) => window.alert(`${size}사이즈`),
+      t,
+      rA,r,
+      test: size => window.alert(`${size}사이즈`),
     }
   }
 });

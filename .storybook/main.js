@@ -1,11 +1,9 @@
 module.exports = {
-  "stories": [
-    "../storybook/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: ['../storybook/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
   ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
-  ],
-  "framework": "@storybook/react",
-}
+  framework: '@storybook/vue',
+};

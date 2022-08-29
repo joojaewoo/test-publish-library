@@ -1,15 +1,23 @@
 {
-  "name": "library-button-test",
-  "version": "1.0.12",
-  "description": "",
+  "name": "@deali-web/ssm-design",
+  "version": "1.0.0",
+  "description": "dealicious sinsang market ui component library",
   "typings": "index.d.ts",
   "type": "module",
+  "author": {
+    "name": "web-fe"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     "./react": "./react/design-react.js",
-    "./vue": "./vue/design-vue.esm.js",
+    "./vue": "./vue/design-vue.js",
     "./types": "./types/index.d.ts",
     "./package.json": "./package.json"
   },
+  "homepage": "https://github.com/deali-web/ssm-design",
+  "repository": "https://github.com/deali-web/ssm-design",
   "typesVersions": {
     "*": {
       "react": [
@@ -37,9 +45,6 @@
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {
-    "@vue/composition-api": "~1.6.0",
-    "axios": "^0.21.1",
-    "vue": "~2.6.14",
-    "vue-cookies": "^1.7.4"
+    "vue": "~2.7.0"
   }
 }

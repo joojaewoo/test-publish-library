@@ -10,6 +10,9 @@ const btnProps = {
   hoverBackgroundColor: String,
   hoverBorder: String,
   color: String,
+};
+
+const hoverContainerProps = {
   padding: String,
 };
 
@@ -37,7 +40,7 @@ export const StyledButton = styled('button', btnProps)`
   }
 `;
 
-export const HoverContainer = styled('div', btnProps)`
+export const HoverContainer = styled('div', hoverContainerProps)`
   width: 100%;
   height: 100%;
   padding: ${(props) => props.padding};

@@ -10,7 +10,8 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, PropType } from '@vue/composition-api';
+import { defineComponent, PropType } from 'vue';
+
 import { HoverContainer, StyledButton } from './styled';
 
 const buttonType = {
@@ -71,7 +72,7 @@ export default defineComponent({
     },
     size: {
       type: String as PropType<keyof typeof sizeType>,
-      default: 'md',
+      default: 'md'
     },
   },
   components: {

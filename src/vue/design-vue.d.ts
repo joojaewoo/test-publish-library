@@ -1,16 +1,19 @@
-interface ISsmButtonProps {
-  type?: 'solid' | 'lightSolid' | 'outlined';
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+import Vue, { PluginFunction, DefineComponent } from 'vue';
+
+declare const DesignLib: PluginFunction<Vue>;
+export default DesignLib;
+export declare const SsmButton: DefineComponent<{
+  type: 'solid' | 'lightSolid' | 'outlined';
+  size: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   isDisabled?: boolean;
-}
-
-declare module 'library-button-test/vue' {
-  import Vue, { ComponentOptions, PluginFunction } from 'vue';
-
-  class ButtonTest {
-    static install: PluginFunction<Vue>;
-
-    static SsmButton: ComponentOptions<Vue, {}, {}, {}, ISsmButtonProps>;
-  }
-  export default ButtonTest;
-}
+}>;
+export declare const CheckBoxButton: DefineComponent<{
+  value: boolean;
+  status: 'normal' | 'readonly' | 'disabled';
+  type: 'square' | 'circle';
+}>;
+export declare const RadioButton: DefineComponent<{
+  value: string;
+  keyValue: string;
+  isDisabled: boolean;
+}>;

@@ -15,7 +15,6 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest",
       "node"
     ],
     "paths": {
@@ -34,6 +33,9 @@
       "./node_modules/@types"
     ],
     "noImplicitAny": false
+  },
+  "vueCompilerOptions": {
+    "target": 2.7
   },
   "include": [
     "src/**/*.ts",

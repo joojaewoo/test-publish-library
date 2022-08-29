@@ -30,8 +30,8 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
     sourceType: 'module',
+    ecmaVersion: 2020,
   },
 
   overrides: [
@@ -44,6 +44,51 @@ module.exports = {
       files: ['**/*.jsx', 'src/react/*.js'],
       plugins: ['react'],
       rules,
+    },
+    {
+      files: ['**/*.vue', 'src/vue/**/*.vue'],
+      plugins: ['vue'],
+      extends: ['plugin:vue/recommended'],
+      rules: {
+        indent: ['error', 2],
+        'no-tabs': 0,
+        'vue/html-indent': ['error', 2],
+        'vue/script-indent': ['error', 2],
+        'max-len': ['error', 120],
+        'import/extensions': [
+          'warn',
+          'ignorePackages',
+          {
+            js: 'never',
+            jsx: 'never',
+            ts: 'never',
+            tsx: 'never',
+            mjs: 'never',
+            vue: 'always',
+          },
+        ],
+        'import/no-unresolved': [
+          'error',
+          {
+            ignore: [''],
+          },
+        ],
+        'no-shadow': 1,
+        'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }],
+        'vue/html-closing-bracket-newline': [
+          'error',
+          {
+            singleline: 'never',
+            multiline: 'never',
+          },
+        ],
+        'no-param-reassign': 1,
+        '@typescript-eslint/no-var-requires': 1,
+        '@typescript-eslint/no-this-alias': 1,
+        '@typescript-eslint/ban-ts-comment': 1,
+        '@typescript-eslint/no-unused-vars': 'error',
+      },
+      parser: 'vue-eslint-parser',
     },
     {
       files: ['src/**/*.*'],

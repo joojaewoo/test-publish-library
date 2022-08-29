@@ -1,0 +1,88 @@
+/**
+색상 글로벌 설정
+ */
+
+$main : #fb4760;
+$red: #ff5252;
+$danger: #D32F2F;
+$dark: #000000;
+$black: #222222;
+$button: #666666;
+$gray-8: #888888;
+$gray: #9B9B9B;
+$gray-light: #AAAAAA;
+$disable: #CCCCCC;
+$gray-eb: #EBEBEB;
+$gray-ef: #EFEFEF;
+$gray-f6: #F6F6F6;
+$green-dark: #608e92;
+$green: #43a047;
+$white: #fff;
+$cyan: rgb(75, 180, 156);
+
+/*
+ * 새롭게 정의 된 프로덕트 컬러값 정의
+ */
+
+// Main Color
+
+$pink10: #FEECEF; // Pink 타입의 뱃지 적용시, 배경색으로 활용됨
+$pink20: #FEDADF;
+$pink30: #FDB5BF;
+$pink40: #FD91A0;
+$pink50: #FC6C80;
+$pink60: #FB4760; // brand color로, CTA 버튼에 적용됨
+$pink70: #FB3A55;
+$pink80: #F42844;
+$pink90: #EC2843; // Red dot, Count Badge에 적용됨
+
+// Sub Color
+
+$blue10: #EAEFFF; // Blue 타입의 뱃지 적용시, 배경색으로 활용됨
+$blue20: #DEE6FF;
+$blue30: #B9CBFF;
+$blue40: #7C9EFD;
+$blue50: #618AFF;
+$blue60: #4B7AFF;
+$blue70: #3668F4; // 툴팁 BG
+$blue80: #255CF9;
+$blue90: #0E46E4;
+
+// Gray Color
+
+$gray10: #F5F6FB; // Divider / BG / Input / Search Bar
+$gray20: #EBEEF6; // Divider / Border
+$gray30: #DFE3ED; // Divider / Border
+$gray40: #D0D6E1;
+$gray50: #BEC5D2; // Dimmed / 비활성화 상태 문구로 활용
+$gray60: #A6ADBD;
+$gray70: #8F97A7; // Placeholder 문구로 활용
+$gray80: #686E7B; // 툴팁 BG
+$gray90: #3E4149;
+$gray100: #222222; // 텍스트 기본 컬러로 사용합니다. (폰트 컬러로 Black, #000000 사용하지 않습니다)
+
+// Black Color
+
+$black100: #000000;
+$black005: rgba($black100, 0.05);
+$black010: rgba($black100, 0.1);
+$black020: rgba($black100, 0.2);
+$black030: rgba($black100, 0.3);
+$black040: rgba($black100, 0.4);
+$black050: rgba($black100, 0.5);
+$black060: rgba($black100, 0.6);
+$black070: rgba($black100, 0.7);
+$black080: rgba($black100, 0.8);
+
+// White Color
+
+$white100: #FFFFFF;
+$white005: rgba($white100, 0.05);
+$white010: rgba($white100, 0.1);
+$white020: rgba($white100, 0.2);
+$white030: rgba($white100, 0.3);
+$white040: rgba($white100, 0.4);
+$white050: rgba($white100, 0.5);
+$white060: rgba($white100, 0.6);
+$white070: rgba($white100, 0.7);
+$white080: rgba($white100, 0.8);

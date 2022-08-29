@@ -1,13 +1,17 @@
-import React from 'react';
+import { SsmButton } from 'library-button-test/vue/design-vue';
 
-import { SsmButton } from '/dist/react/design-react';
+interface ButtonArgs {
+  type: 'solid' | 'lightSolid' | 'outlined';
+  size: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  label: string;
+}
 
 export default {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'React/SsmButton',
+  title: 'Vue/SsmButton',
   component: SsmButton,
   argTypes: {
     size: {
@@ -25,7 +29,13 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <SsmButton {...args}>{args.label}</SsmButton>;
+const Template = (args: ButtonArgs) => ({
+  components: { SsmButton },
+  setup() {
+    return { ...args };
+  },
+  template: '<ssm-button :size="size" :type="type">{{label}}</ssm-button>',
+});
 
 //👇 Each story then reuses that template
 export const Solid = Template.bind({});

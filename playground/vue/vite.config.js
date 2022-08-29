@@ -1,8 +1,8 @@
 import path from 'path';
-import { createVuePlugin } from 'vite-plugin-vue2'
+import vue from '@vitejs/plugin-vue2';
 
 export default {
-  plugins: [createVuePlugin()],
+  plugins: [vue()],
   resolve: {
     alias: {
       design: path.resolve(__dirname, '../../dist'),
