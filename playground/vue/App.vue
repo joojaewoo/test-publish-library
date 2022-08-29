@@ -7,18 +7,19 @@
     </ssm-button>
     <ssm-button
       size="md"
+      type="solid"
       @click="test('md')">
       중간사이즈
     </ssm-button>
     <ssm-button
       size="lg"
-      type="outline"
+      btn-type
       @click="test('lg')">
       라지사이즈
     </ssm-button>
     <ssm-button
       size="xlg"
-      type="lightSolid"
+      btn-type="lightSolid"
       @click="test('xlg')">
       더큰사이즈
     </ssm-button>
@@ -54,6 +55,8 @@ import { defineComponent, ref } from 'vue';
 // @ts-ignore
 import styled from 'vue-styled-components';
 
+import {SsmButton, CheckBoxButton, RadioButton} from 'ssm-design/vue'
+//
 const ButtonContainer = styled('div')`
   display: flex;
   align-items: flex-start;
@@ -68,6 +71,9 @@ export default defineComponent({
   name: 'TestA',
   components: {
     ButtonContainer,
+    SsmButton,
+    RadioButton,
+    CheckBoxButton
   },
   setup() {
     const t = ref(false);

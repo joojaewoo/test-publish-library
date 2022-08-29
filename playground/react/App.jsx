@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SsmButton } from 'design/react/design-react';
+import { SsmButton } from '@deali-web/ssm-design/react';
 
 const Container = styled('div')`
   display: flex;
@@ -10,19 +10,29 @@ const Container = styled('div')`
   gap: 20px;
   margin: 0 auto;
   padding-top: 100px;
-`
+`;
 
 const App = () => {
   const onClick = (str) => {
-    window.alert(str)
-  }
+    window.alert(str);
+  };
   return (
     <Container>
-      <SsmButton size="sm" onClick={() => onClick('sm')}>스몰사이즈</SsmButton>
-      <SsmButton size="md" onClick={() => onClick('md')}>중간사이즈</SsmButton>
-      <SsmButton size="lg" onClick={() => onClick('lg')}>라지사이즈</SsmButton>
-      <SsmButton size="xlg" onClick={() => onClick('xlg')}>더큰사이즈</SsmButton>
-      <SsmButton size="full" onClick={() => onClick('full')}>꽉찬사이즈</SsmButton>
+      <SsmButton size="sm" onClick={() => onClick('sm')}>
+        스몰사이즈
+      </SsmButton>
+      <SsmButton size="md" onClick={() => onClick('md')}>
+        중간사이즈
+      </SsmButton>
+      <SsmButton size="lg" onClick={() => onClick('lg')}>
+        라지사이즈
+      </SsmButton>
+      <SsmButton size="xlg" onClick={() => onClick('xlg')}>
+        더큰사이즈
+      </SsmButton>
+      <SsmButton size="full" onClick={() => onClick('full')}>
+        꽉찬사이즈
+      </SsmButton>
     </Container>
   );
 };

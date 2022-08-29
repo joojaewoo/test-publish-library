@@ -1,21 +1,18 @@
 <template>
   <styled-check-box-button
     v-bind="btnStatus[status]"
-    :isChecked="value"
-    :isDisabled="status === 'disabled'"
+    :is-checked="value"
+    :is-disabled="status === 'disabled'"
     :disabled="status === 'disabled'"
-    @click.stop="check"
-  >
-    <click-area :isDisabled="status === 'disabled'">
+    @click.stop="check">
+    <click-area :is-disabled="status === 'disabled'">
       <check-box-container
-        v-bind="{...btnType[type], isChecked: value, isDisabled: status === 'disabled'}"
-      >
-          <check-box-image-container>
-            <check-box-image
-              alt="check-box-image"
-              :src="checkBoxImage"
-            />
-          </check-box-image-container>
+        v-bind="{...btnType[type], isChecked: value, isDisabled: status === 'disabled'}">
+        <check-box-image-container>
+          <check-box-image
+            alt="check-box-image"
+            :src="checkBoxImage" />
+        </check-box-image-container>
       </check-box-container>
     </click-area>
     <slot />
@@ -81,8 +78,11 @@ export default defineComponent({
     ClickArea,
     CheckBoxImage,
   },
+  model: {
+    prop: 'value',
+    event: 'input',
+  },
   props: {
-    // v-model
     value: {
       type: Boolean,
       default: false,

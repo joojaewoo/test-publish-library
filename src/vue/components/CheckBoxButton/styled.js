@@ -1,14 +1,6 @@
 import styled from 'vue-styled-components';
 
 const btnProps = {
-  width: String,
-  height: String,
-  backgroundColor: String,
-  fontSize: String,
-  border: String,
-  hoverColor: String,
-  hoverBackgroundColor: String,
-  hoverBorder: String,
   pointerEvents: String,
   color: String,
   cursor: String,

@@ -55,24 +55,6 @@ module.exports = {
         'vue/html-indent': ['error', 2],
         'vue/script-indent': ['error', 2],
         'max-len': ['error', 120],
-        'import/extensions': [
-          'warn',
-          'ignorePackages',
-          {
-            js: 'never',
-            jsx: 'never',
-            ts: 'never',
-            tsx: 'never',
-            mjs: 'never',
-            vue: 'always',
-          },
-        ],
-        'import/no-unresolved': [
-          'error',
-          {
-            ignore: [''],
-          },
-        ],
         'no-shadow': 1,
         'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }],
         'vue/html-closing-bracket-newline': [
@@ -82,19 +64,17 @@ module.exports = {
             multiline: 'never',
           },
         ],
-        'no-param-reassign': 1,
-        '@typescript-eslint/no-var-requires': 1,
-        '@typescript-eslint/no-this-alias': 1,
-        '@typescript-eslint/ban-ts-comment': 1,
-        '@typescript-eslint/no-unused-vars': 'error',
       },
       parser: 'vue-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        ecmaVersion: 2020,
+      },
     },
     {
       files: ['src/**/*.*'],
       rules: {
         ...rules,
-        'import/extensions': [2, 'ignorePackages', { js: 'always' }],
       },
     },
   ],

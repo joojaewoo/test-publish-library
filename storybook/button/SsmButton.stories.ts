@@ -1,4 +1,4 @@
-import { SsmButton } from 'library-button-test/vue/design-vue';
+import { SsmButton } from '@/vue/components';
 
 interface ButtonArgs {
   type: 'solid' | 'lightSolid' | 'outlined';
@@ -19,42 +19,43 @@ export default {
       control: { type: 'select' },
       description: 'size (sm, md, lg, xlg, full) 중 설정',
     },
-    type: {
+    btnType: {
       table: { disable: true },
     },
     label: {
       description: '버튼 text 문자',
     },
+    default: {
+      table: { disable: true },
+    },
   },
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args: ButtonArgs) => ({
+const Template = (args: ButtonArgs, { argTypes }: { argTypes: ButtonArgs }) => ({
   components: { SsmButton },
-  setup() {
-    return { ...args };
-  },
-  template: '<ssm-button :size="size" :type="type">{{label}}</ssm-button>',
+  props: Object.keys(argTypes),
+  template: '<ssm-button v-bind="$props">{{label}}</ssm-button>',
 });
 
 //👇 Each story then reuses that template
 export const Solid = Template.bind({});
 Solid.args = {
   size: 'md',
-  type: 'solid',
+  btnType: 'solid',
   label: 'Button',
 };
 
 export const LightSolid = Template.bind({});
 LightSolid.args = {
   size: 'md',
-  type: 'lightSolid',
+  btnType: 'lightSolid',
   label: 'Button',
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
   size: 'md',
-  type: 'outline',
+  btnType: 'outline',
   label: 'Button',
 };

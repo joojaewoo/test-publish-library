@@ -31,6 +31,10 @@ export default defineComponent({
     IconContainer,
     CircleIcon,
   },
+  model: {
+    prop: 'value',
+    event: 'input',
+  },
   props: {
     // v-model로 받아올 값, 라디오 버튼 비교값 값
     value: {

@@ -1,4 +1,4 @@
-import { CheckBoxButton } from 'library-button-test/vue/design-vue';
+import { CheckBoxButton } from '@/vue/components';
 import { ref } from 'vue';
 
 interface ButtonArgs {
@@ -26,17 +26,24 @@ export default {
     label: {
       description: '체크박스 label 문자',
     },
+    'v-model': {
+      table: { disable: true },
+    },
+    default: {
+      table: { disable: true },
+    },
   },
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args: ButtonArgs) => ({
+const Template = (args: ButtonArgs, { argTypes }: { argTypes: ButtonArgs }) => ({
   components: { CheckBoxButton },
+  props: Object.keys(argTypes),
   setup() {
     const checkedValue = ref(false);
-    return { checkedValue, ...args };
+    return { checkedValue };
   },
-  template: `<check-box-button :status="status" v-model="checkedValue" :type="type">
+  template: `<check-box-button v-bind='$props' v-model="checkedValue">
       {{ label }}
     </check-box-button>`,
 });
