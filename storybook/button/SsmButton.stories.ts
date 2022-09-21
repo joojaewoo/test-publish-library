@@ -53,9 +53,9 @@ LightSolid.args = {
   label: 'Button',
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
+export const Outlined = Template.bind({});
+Outlined.args = {
   size: 'md',
-  btnType: 'outline',
+  btnType: 'outlined',
   label: 'Button',
 };
