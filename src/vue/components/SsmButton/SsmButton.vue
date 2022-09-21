@@ -24,7 +24,7 @@ const buttonType = {
     backgroundColor: '#EBEEF6',
     border: 'none',
   },
-  outline: {
+  outlined: {
     color: '#3E4149',
     backgroundColor: '#ffffff',
     border: '1px solid #D0D6E1',

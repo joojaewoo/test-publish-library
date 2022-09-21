@@ -1,6 +1,6 @@
 {
   "name": "@deali-web/ssm-design",
-  "version": "1.0.1",
+  "version": "1.0.1-alpha.1",
   "description": "dealicious sinsang market ui component library",
   "typings": "index.d.ts",
   "type": "module",

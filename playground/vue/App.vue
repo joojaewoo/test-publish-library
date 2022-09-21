@@ -13,7 +13,7 @@
     </ssm-button>
     <ssm-button
       size="lg"
-      btn-type
+      btn-type="outline"
       @click="test('lg')">
       라지사이즈
     </ssm-button>
@@ -30,8 +30,13 @@
     </ssm-button>
     <check-box-button
       v-model="t"
-      status="di">
-      tttt
+      type="square">
+      square
+    </check-box-button>
+    <check-box-button
+      v-model="t"
+      type="circle">
+      round
     </check-box-button>
     <radio-button
       v-for="item in rA"
@@ -39,12 +44,6 @@
       v-model="r"
       :key-value="item">
       {{ item }}
-    </radio-button>
-    <radio-button
-      v-model="r"
-      :key-value="'a'"
-      is-disable>
-      aaa
     </radio-button>
   </button-container>
 </template>
@@ -55,7 +54,7 @@ import { defineComponent, ref } from 'vue';
 // @ts-ignore
 import styled from 'vue-styled-components';
 
-import {SsmButton, CheckBoxButton, RadioButton} from 'ssm-design/vue'
+import {SsmButton, CheckBoxButton, RadioButton} from '@deali-web/ssm-design/vue'
 //
 const ButtonContainer = styled('div')`
   display: flex;
