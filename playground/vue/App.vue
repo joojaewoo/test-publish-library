@@ -13,7 +13,7 @@
     </ssm-button>
     <ssm-button
       size="lg"
-      btn-type="outline"
+      btn-type="outlined"
       @click="test('lg')">
       라지사이즈
     </ssm-button>
@@ -54,7 +54,10 @@ import { defineComponent, ref } from 'vue';
 // @ts-ignore
 import styled from 'vue-styled-components';
 
-import {SsmButton, CheckBoxButton, RadioButton} from '@deali-web/ssm-design/vue'
+// 배포된 버전을 보고싶을때 아래의 의 import 주석을 풀고 design/vue/design-vue 를 주석처리
+// import {SsmButton, CheckBoxButton, RadioButton} from '@deali-web/ssm-design/vue'
+import {SsmButton, CheckBoxButton, RadioButton} from 'design/vue/design-vue';
+
 //
 const ButtonContainer = styled('div')`
   display: flex;

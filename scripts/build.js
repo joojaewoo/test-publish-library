@@ -28,6 +28,7 @@ class Build {
       await fs.ensureDir(`./${outputDir}`);
     }
     await fs.copy('./src/copy/', `./${outputDir}`);
+    await fs.copy('./credential', `./${outputDir}`);
 
     const res = await Promise.all(this.tasks.map((buildFn) => buildFn())).catch((err) => {
       console.error(err);

@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SsmButton } from '@deali-web/ssm-design/react';
+
+// 배포된 버전을 보고싶을때 아래의 의 import 주석을 풀고 design/react/design-react 를 주석처리
+// import { SsmButton } from '@deali-web/ssm-design/react';
+import { SsmButton } from 'design/react/design-react';
 
 const Container = styled('div')`
   display: flex;

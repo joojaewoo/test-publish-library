@@ -58,6 +58,7 @@ const sizeType = {
     fontSize: '16px',
   },
 };
+
 export default defineComponent({
   name: 'SsmButton',
   components: {

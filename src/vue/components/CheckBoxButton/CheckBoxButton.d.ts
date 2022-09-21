@@ -5,3 +5,5 @@ export declare const CheckBoxButton: DefineComponent<{
   status: 'normal' | 'readonly' | 'disabled';
   type: 'square' | 'circle';
 }>;
+
+export default CheckBoxButton;
