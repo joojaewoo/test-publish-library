@@ -1,5 +1,5 @@
 const fs = require('fs-extra');
-const pkg = require('../../package.json');
+const pkg = require('../../src/copy/package.json');
 
 const date = {
   day: new Date().getDate(),
@@ -17,7 +17,7 @@ function banner(name = null) {
  * ${pkg.description}
  * ${pkg.homepage}
  *
- * Copyright 2022-${date.year} ${pkg.author}
+ * Copyright 2022-${date.year} ${pkg.author.name}
  *
  * Released on: ${date.month} ${date.day}, ${date.year}
  */
